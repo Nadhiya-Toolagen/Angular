@@ -11,9 +11,9 @@ on:
 #
 # 2. Change these variables for your configuration:
 env:
-  AZURE_WEBAPP_NAME: check    # set this to your application's name
+  AZURE_WEBAPP_NAME: 'TimeSheetAPPUI'    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: './dist/check'      # set this to the path to your web app project
-  NODE_VERSION: '18.x'                # set this to the node version to use
+  NODE_VERSION: '18.0'                # set this to the node version to use
 
 jobs:
   build-and-deploy:
@@ -28,7 +28,7 @@ jobs:
     - name: npm install and build
       run: |
         npm install
-        npm run build -- --prod
+        npm run build --prod
     - name: 'Deploy to Azure WebApp'
       uses: azure/webapps-deploy@v1
       with: 
